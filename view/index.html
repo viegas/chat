@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" ng-app>
+  <head>
+    <title>Socket Chat - IFRS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300' rel="stylesheet">
+    <link rel="stylesheet" href="/resources/css/style.css">
+  </head>
+  <body>
+    
+    <header class="site-header"><a href="#" id="site-logo" class="center-block"></a><a href="#" id="git"></a></header>
+    
+    <section class="center-block" id="chat">
+      <header>
+        <nav class="f-right">
+          <ul>
+             <li id="config"></li>
+             <li id="minimize"></li>
+             <li id="close"></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="darkscreen">
+        <section class="center-block" id="start">
+          <input type="text" placeholder="Nome" class="center-block" id="nickname" />
+          <button class="btn btn-start btn-success">Iniciar</button>
+        </section>
+      </div>
+      
+      <aside class="block f-left" id="members">
+        <h4>Usuários Online</h4>
+        <ul></ul>
+      </aside>
+      
+      <section class="block f-left" id="log-message">
+        <ul></ul>
+      </section>
+      
+      <form class="block f-left" id="box-message">
+        <input type="text" class="block" placeholder="Mensagem..." id="message" autocomplete="off" />
+        <input type="submit" class="btn btn-success" id="send" value="Enviar" />
+      </form>
+      
+    </section>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/resources/js/jquery.min.js"></script>
+    <script src="/resources/js/script.js"></script>
+  </body>
+</html>

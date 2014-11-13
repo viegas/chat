@@ -1,0 +1,358 @@
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #ececec;
+}
+
+body, form, input {
+    font-family: "Open Sans", "Arial";
+}
+
+.center-block {
+    display: block;
+    margin: 0 auto;
+}
+
+.block {
+    display: block;
+}
+
+.f-left {
+    float: left;
+}
+
+.f-right {
+    float: right;
+}
+
+.darkscreen {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .9);
+    position: absolute;
+    z-index: 1000;
+}
+
+.darkscreen > * {
+    z-index: 1001;
+}
+
+/* HEADER */
+.site-header {
+    background: url("../img/ads_logo.png") no-repeat 20px center;
+    background-color: #fff;
+    width: 100%;
+    height: 120px;
+    box-shadow: 0 2px 2px rgba(0,0,0,.2);
+}
+
+#site-logo {
+    width: 380px;
+    height: 100%;
+    background: url("../img/socket_logo.png") no-repeat center;
+    cursor: pointer;
+}
+
+#git {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 120px;
+    height: 120px;
+    background: url("../img/git_icon.png") no-repeat center;
+    cursor: pointer;
+    opacity: .3;
+    transition: opacity ease-in-out .3s;
+}
+
+#git:hover {
+    opacity: 1;
+}
+
+/* CHAT BOX */
+#chat {
+    width: 980px;
+    height: 400px;
+    background: #f9f9f9;
+    border-radius: 6px;
+    margin-top: 50px;
+    position: relative;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+    box-sizing: content-box;
+    border-bottom: 0px solid #ddd;
+}
+
+/*Start*/
+#start {
+    width: 300px;
+    height: 160px;
+    margin-top: 80px;
+    border-radius: 3px;
+    background: #eee;
+    border: 1px solid #ccc;
+    border-bottom: 8px solid #bbb;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 1);
+    padding: 20px;
+}
+
+
+/*Box*/
+#chat > header {
+    position: absolute;
+    top: 0;
+    height: 25px;
+    width: 100%;
+    background: #eee;
+    border-radius: 6px 6px 0 0;
+    border-bottom: 1px solid #ddd;
+}
+
+#chat ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#chat > header ul li {
+    margin: 7px 3px;
+    padding: 0;
+    display: block;
+    float: left;
+    transition: all ease-in-out .3s;
+}
+
+#chat > header ul li:hover {
+    cursor: pointer;
+    opacity: .6;
+}
+
+#chat nav {
+    margin-right: 5px;
+}
+
+#close,
+#minimize {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid;
+}
+
+#close {
+    background: #e26a6a;
+    border-color: #ea9393;
+}
+
+#minimize {
+    background: #ed9a3b; 
+    border-color: #f4b369;
+}
+
+#config {
+    width: 15px;
+    height: 15px;
+    background: url("../img/config_icon.png") no-repeat center;
+    margin: 5px 5px 0 0 !important;
+    opacity: .3;
+}
+
+#members {
+    width: 180px;
+    height: 100%;
+    border-right: 1px solid #ddd;
+    background: #F4F4F4;
+    border-radius: 4px 0 0 4px;
+}
+
+#members h4 {
+    color: #616161;
+    text-align: center;
+    margin-top: 30px;
+    position: relative;
+}
+
+#members h4::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: green;
+    position: absolute;
+    border-radius: 50%;
+    top: 8px;
+    left: 15px;
+    background: #48c848;
+}
+
+#members ul {
+    font-size: 14px;
+    margin: 0;
+    cursor: default;
+}
+
+#members ul li {
+    margin: 10px;
+    background: #eaeaea;
+    padding: 5px 10px;
+    border-radius: 4px;
+    border-left: 4px solid #ddd;
+}
+
+li.self {
+    background: #e3f4ea !important;
+    border-left: 4px solid #a1dac2 !important;
+    font-weight: bold;
+}
+
+#log-message {
+    width: 800px;
+    height: 80%;
+    max-height: 80%;
+    box-sizing: content-box;
+    overflow: auto;
+    word-wrap: break-word;
+}
+
+
+#log-message ul {
+    margin-top: 40px;
+}
+
+#log-message ul li {
+    padding: 6px;
+    background: #e3f0f4;
+    margin: 10px;
+    border-radius: 4px;
+    border-left: 4px solid #A1CCDA;
+}
+
+#log-message ul li > span {
+    font-weight: bold;
+}
+
+.self-msg {
+    background: #e3f4ea !important;
+    border-left: 4px solid #a1dac2 !important;
+}
+
+.server-msg {
+    background: none !important;
+    font-style: italic;
+    border-left: none !important;
+    font-size: 12px;
+}
+
+#box-message {
+    position: relative;
+    display: block;
+    width: 800px;
+    height: 20%;
+}
+
+#message {
+    width: 80%;
+    height: 50px;
+    float: left;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    margin: 15px 0 0 15px;
+}
+
+#send {
+    height: 46px;
+    float: left;
+    margin: 15px 0;
+}
+
+.btn {
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 12px 30px;
+    display: inline-block;
+    margin: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.btn-2 {
+    background: #54D06D;
+    color: #fff;
+    box-shadow: 0 4px #4BB854;
+    transition: none;
+}
+
+.btn-success {
+    background: #24b662;
+    color: #fff;
+    box-shadow: 0 4px #549D5A;
+    transition: none;
+}
+
+.btn-success:active,
+.btn-pressed {
+    box-shadow: 0 2px #549D5A;
+    top: 2px;
+}
+
+.btn-start {
+    display: block;
+    margin: 0 auto;
+}
+
+.btn-start:hover {
+    background: #2eb467;
+}
+
+input[type=text] {
+    border: 1px solid #b2b2b2;
+    padding: 6px 10px;
+    height: 33px;
+    outline: 0;;
+    vertical-align: middle;
+    transition: all ease-in-out .3s;
+}
+
+input[type=text]:hover,
+input[type=date]:hover,
+select:hover {
+	border: 1px solid #818181;
+}
+
+input[type=text]:focus,
+input[type=text]:active,
+select:focus,
+select:active,
+input[type=date]:focus,
+input[type=text]:active {
+	border: 1px solid #5886da;
+}
+
+.inp-error {
+    border: 1px solid #ED6666 !important;
+}
+.inp-error::-webkit-input-placeholder {
+    color: #ED6666;
+}
+
+#nickname,
+#start button {
+    width: 100%;
+}
+
+#nickname {
+    height: 50px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}

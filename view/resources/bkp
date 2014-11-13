@@ -1,0 +1,9 @@
+   client.on("disconnect", function(name) {
+      var nickname = client.nickname;
+      
+      storeMember(false, nickname);
+      users.forEach(function(user) {
+         client.emit("manager chatter", user.name);
+      });
+      console.log(nickname + " saiu.");
+   });
